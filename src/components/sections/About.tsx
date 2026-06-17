@@ -1,17 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, GraduationCap } from "lucide-react";
 
 const stats = [
-  { value: 3, suffix: "+", label: "Years Experience" },
-  { value: 20, suffix: "+", label: "Projects" },
-  { value: 10, suffix: "+", label: "Happy Clients" },
-  { value: 5, suffix: "+", label: "Technologies" },
+  { value: 2026, suffix: "", label: "B.Tech IT" },
+  { value: 748, suffix: "", label: "CGPA 7.48" },
+  { value: 5, suffix: "+", label: "Projects" },
+  { value: 1, suffix: "", label: "Full-Stack" },
 ];
 
 function Counter({ target, suffix = "", label }: { target: number; suffix?: string; label: string }) {
@@ -37,10 +36,16 @@ function Counter({ target, suffix = "", label }: { target: number; suffix?: stri
     return () => clearInterval(timer);
   }, [isInView, target]);
 
+  const displayValue = label === "CGPA 7.48" && count > 0
+    ? (count / 100).toFixed(2)
+    : label === "B.Tech IT"
+      ? count.toString()
+      : count + suffix;
+
   return (
     <div ref={ref} className="text-center">
       <span className="font-display text-3xl sm:text-4xl font-bold gradient-text">
-        {count}{suffix}
+        {displayValue}
       </span>
       <p className="mt-1 text-sm text-muted">{label}</p>
     </div>
@@ -51,14 +56,11 @@ export default function About() {
   return (
     <section id="about" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          subtitle="Passionate about crafting digital experiences"
-        >
+        <SectionHeading subtitle="Crafting scalable systems with clean, performant code">
           About Me
         </SectionHeading>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          {/* Left - Avatar */}
           <motion.div
             className="lg:col-span-2 flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -69,14 +71,13 @@ export default function About() {
             <div className="relative">
               <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-primary via-primary-dim to-surface flex items-center justify-center shadow-2xl glow-green animate-[float_6s_ease-in-out_infinite]">
                 <span className="font-display text-6xl sm:text-7xl font-bold text-foreground glow-text">
-                  AP
+                  AR
                 </span>
               </div>
               <div className="absolute -inset-4 rounded-full bg-primary/5 blur-3xl -z-10" />
             </div>
           </motion.div>
 
-          {/* Right - Content */}
           <div className="lg:col-span-3 space-y-8">
             <motion.p
               className="text-lg sm:text-xl leading-relaxed text-muted"
@@ -85,14 +86,23 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
             >
-              I&apos;m a full-stack developer with a passion for building beautiful,
-              performant web applications. I love combining creative design with
-              clean code to deliver exceptional user experiences. When I&apos;m not
-              coding, you&apos;ll find me exploring new technologies, contributing to
-              open source, or writing about my learnings.
+              Specializes in scalable full-stack systems using MERN stack and Next.js.
+              Experienced in designing real-time communication layers, multi-tenant SaaS
+              architectures, and RESTful APIs with strong foundation in DSA, OOP, and DBMS.
+              Passionate about clean, maintainable code and optimizing system performance.
             </motion.p>
 
-            {/* Stats */}
+            <motion.div
+              className="flex items-center gap-3 text-muted text-sm sm:text-base"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+            >
+              <GraduationCap size={20} className="text-primary shrink-0" />
+              <span>Asansol Engineering College &middot; Aug 2022 &ndash; Jun 2026</span>
+            </motion.div>
+
             <motion.div
               className="grid grid-cols-2 sm:grid-cols-4 gap-6"
               initial={{ opacity: 0, y: 20 }}
@@ -107,22 +117,19 @@ export default function About() {
               ))}
             </motion.div>
 
-            {/* Download Resume */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 1, 0.5, 1] }}
             >
-              <button className={cn(
-                "group inline-flex items-center gap-3 px-6 py-3 rounded-xl",
-                "glass hover:glass-hover transition-all duration-500",
-                "text-foreground font-medium text-sm"
-              )}>
+              <a
+                href="#"
+                className="group inline-flex items-center gap-3 px-6 py-3 rounded-xl glass hover:glass-hover transition-all duration-500 text-foreground font-medium text-sm"
+              >
                 <Download size={18} className="transition-transform duration-300 group-hover:-translate-y-0.5" />
                 Download Resume
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

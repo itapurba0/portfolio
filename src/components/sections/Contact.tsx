@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Mail, MapPin, Code2, Globe, AtSign, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, GitBranch, Globe, Send, Loader2 } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@apurba.dev", href: "mailto:hello@apurba.dev" },
-  { icon: MapPin, label: "Location", value: "Bangladesh" },
-  { icon: Code2, label: "GitHub", value: "@apurba-roy", href: "https://github.com/apurba-roy" },
+  { icon: Mail, label: "Email", value: "apurba00237@gmail.com", href: "mailto:apurba00237@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 83910 42307", href: "tel:+918391042307" },
+  { icon: MapPin, label: "Location", value: "Asansol, West Bengal" },
+  { icon: GitBranch, label: "GitHub", value: "@apurba-roy", href: "https://github.com/apurba-roy" },
   { icon: Globe, label: "LinkedIn", value: "apurba-roy", href: "https://linkedin.com/in/apurba-roy" },
-  { icon: AtSign, label: "Twitter", value: "@apurba_roy", href: "https://twitter.com/apurba_roy" },
 ];
 
 interface FormState {
@@ -50,9 +50,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
     setSubmitting(true);
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log("Form submitted:", form);
     setSubmitting(false);
@@ -82,14 +80,11 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          subtitle="Have a project in mind or just want to say hi? I&apos;d love to hear from you."
-        >
+        <SectionHeading subtitle="Have a project in mind or just want to say hi? I'd love to hear from you.">
           Get In Touch
         </SectionHeading>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
-          {/* Left - Contact Info */}
           <motion.div
             className="lg:col-span-2 space-y-6"
             initial={{ opacity: 0, x: -30 }}
@@ -126,19 +121,17 @@ export default function Contact() {
               );
             })}
 
-            {/* Availability status */}
             <div className="flex items-center gap-3 pt-4">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
               </span>
               <span className="text-sm text-muted">
-                Currently available for freelance work
+                Open for opportunities &mdash; Summer 2026 graduate
               </span>
             </div>
           </motion.div>
 
-          {/* Right - Form */}
           <motion.div
             className="lg:col-span-3"
             initial={{ opacity: 0, x: 30 }}

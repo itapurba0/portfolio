@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Palette, Terminal, Sparkles, ChevronDown } from "lucide-react";
+import { Code2, Server, Database, Sparkles, ChevronDown } from "lucide-react";
 
 const floatingIcons = [
-  { Icon: Code, x: "15%", y: "20%", delay: 0, duration: 6 },
-  { Icon: Palette, x: "80%", y: "25%", delay: 1.5, duration: 7 },
-  { Icon: Terminal, x: "20%", y: "70%", delay: 3, duration: 8 },
+  { Icon: Code2, x: "15%", y: "20%", delay: 0, duration: 6 },
+  { Icon: Server, x: "80%", y: "25%", delay: 1.5, duration: 7 },
+  { Icon: Database, x: "20%", y: "70%", delay: 3, duration: 8 },
   { Icon: Sparkles, x: "75%", y: "65%", delay: 2, duration: 6.5 },
 ];
 
@@ -69,7 +69,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-primary font-display text-sm sm:text-base tracking-[0.3em] uppercase mb-4"
         >
-          Welcome to my portfolio
+          Final-Year B.Tech IT Student
         </motion.p>
 
         <motion.h1
@@ -83,14 +83,14 @@ export default function Hero() {
           variants={itemVariants}
           className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-muted"
         >
-          Full-Stack Developer & Creative Technologist
+          Full-Stack Developer & System Architect
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="mt-4 text-muted text-base sm:text-lg max-w-lg leading-relaxed"
         >
-          Building things that matter on the web
+          MERN | Next.js | Scalable Systems
         </motion.p>
 
         <motion.div
@@ -104,10 +104,10 @@ export default function Hero() {
             View Projects
           </a>
           <a
-            href="#contact"
-            className="rounded-xl px-8 py-3.5 font-medium text-background bg-primary transition-all duration-500 hover:bg-primary-dim hover:shadow-[0_0_30px_oklch(70%_0.25_145/0.4)]"
+            href="#"
+            className="glass rounded-xl px-8 py-3.5 font-medium text-foreground transition-all duration-500 hover:glass-hover hover:glow-green"
           >
-            Get in Touch
+            Download Resume
           </a>
         </motion.div>
       </motion.div>

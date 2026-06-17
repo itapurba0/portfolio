@@ -19,54 +19,51 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack shopping experience with React, Node.js, Stripe",
-    tags: ["React", "Node.js", "Stripe", "PostgreSQL"],
+    title: "HireOps — Agentic AI Hiring & Talent Evaluation SaaS",
+    description:
+      "Multi-tenant SaaS platform with role-based workspaces, JWT auth, and isolated tenant data. Real-time AI voice interviewing agent using WebRTC and OpenRouter LLM that dynamically generates questions from parsed resume data.",
+    tags: ["Next.js", "FastAPI", "PostgreSQL", "LiveKit", "OpenRouter"],
     category: "Full-Stack",
-    gradient: "linear-gradient(135deg, #00ff87, #60efff)",
+    gradient:
+      "linear-gradient(135deg, oklch(0.7 0.25 145), oklch(0.4 0.2 160))",
     span: "wide",
   },
   {
-    title: "AI Chat App",
-    description: "Real-time AI-powered chat with Next.js, OpenAI, WebSockets",
-    tags: ["Next.js", "OpenAI", "WebSockets", "Redis"],
+    title: "WebChatt — Real-Time Chat Application",
+    description:
+      "Full-stack MERN chat app with persistent bi-directional messaging via Socket.io, concurrent rooms with real-time broadcast. JWT auth, Zustand state keeping re-renders under 16ms.",
+    tags: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Zustand"],
     category: "Full-Stack",
-    gradient: "linear-gradient(135deg, #6e45e2, #88d3ce)",
-    span: "tall",
+    gradient:
+      "linear-gradient(135deg, oklch(0.7 0.2 240), oklch(0.4 0.15 260))",
   },
   {
-    title: "Task Manager",
-    description: "Kanban-style productivity tool with drag-and-drop",
-    tags: ["React", "DnD", "Zustand", "Supabase"],
+    title: "InterviewOS — AI Voice Interview Bot",
+    description:
+      "AI voice interview bot with local LLM inference via Ollama, browser Web Speech API — eliminating all external API costs. Dynamic question generation from parsed context.",
+    tags: ["FastAPI", "Ollama", "Web Speech API", "Python"],
     category: "Tools",
-    gradient: "linear-gradient(135deg, #f093fb, #f5576c)",
-  },
-  {
-    title: "Portfolio Website",
-    description: "This very site! Built with Next.js, Three.js, GSAP",
-    tags: ["Next.js", "Three.js", "GSAP", "Framer"],
-    category: "Frontend",
-    gradient: "linear-gradient(135deg, #4facfe, #00f2fe)",
-    span: "wide",
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather with beautiful data visualization",
-    tags: ["React", "D3.js", "OpenWeather", "Chart.js"],
-    category: "Frontend",
-    gradient: "linear-gradient(135deg, #43e97b, #38f9d7)",
-  },
-  {
-    title: "Dev Blog",
-    description: "A developer blog platform with MDX support",
-    tags: ["Next.js", "MDX", "Tailwind", "Vercel"],
-    category: "Full-Stack",
-    gradient: "linear-gradient(135deg, #fa709a, #fee140)",
+    gradient:
+      "linear-gradient(135deg, oklch(0.75 0.2 35), oklch(0.45 0.15 50))",
     span: "tall",
+  },
+  {
+    title: "Textom — Content Sharing Platform",
+    description:
+      "Zero-account content sharing using auto-generated 6-digit codes with collision prevention. SSR delivering sub-200ms FCP. TTL indexes for auto-expiring content after 15 minutes.",
+    tags: ["Next.js", "MongoDB", "Tailwind CSS", "SSR"],
+    category: "Frontend",
+    gradient:
+      "linear-gradient(135deg, oklch(0.7 0.2 290), oklch(0.4 0.15 310))",
   },
 ];
 
-const categories: ("All" | Category)[] = ["All", "Frontend", "Full-Stack", "Tools"];
+const categories: ("All" | Category)[] = [
+  "All",
+  "Full-Stack",
+  "Frontend",
+  "Tools",
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -106,7 +103,7 @@ function ProjectCard({ project }: { project: Project }) {
       layout
       className={cn(
         "group relative glass rounded-2xl overflow-hidden transition-all duration-500",
-        "hover:glass-hover hover:glow-green",
+        "hover:glass-hover hover:glow-green hover:-translate-y-1",
         "flex flex-col",
         project.span === "wide" && "sm:col-span-2 lg:col-span-2",
         project.span === "tall" && "sm:row-span-2 lg:row-span-2",
@@ -169,7 +166,7 @@ export default function Projects() {
     <section id="projects" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          subtitle="Showcasing some of my best work — from full-stack applications to frontend experiments."
+          subtitle="A selection of projects I've built — from full-stack SaaS platforms to AI tools and real-time applications."
         >
           Featured Projects
         </SectionHeading>

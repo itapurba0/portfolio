@@ -4,13 +4,12 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Mail, MapPin, Github, Linkedin, Twitter, Send, Loader2 } from "lucide-react";
+import { Mail, MapPin, Code2, Linkedin, Twitter, Send, Loader2 } from "lucide-react";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hello@apurba.dev", href: "mailto:hello@apurba.dev" },
   { icon: MapPin, label: "Location", value: "Bangladesh" },
-  { icon: Github, label: "GitHub", value: "@apurba-roy", href: "https://github.com/apurba-roy" },
+  { icon: Code2, label: "GitHub", value: "@apurba-roy", href: "https://github.com/apurba-roy" },
   { icon: Linkedin, label: "LinkedIn", value: "apurba-roy", href: "https://linkedin.com/in/apurba-roy" },
   { icon: Twitter, label: "Twitter", value: "@apurba_roy", href: "https://twitter.com/apurba_roy" },
 ];

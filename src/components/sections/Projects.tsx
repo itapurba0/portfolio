@@ -81,7 +81,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] as const },
   },
 };
 
@@ -145,7 +145,7 @@ function ProjectCard({ project }: { project: Project }) {
             Live Demo
           </span>
           <span className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-xl glass text-muted hover:text-foreground hover:glass-hover transition-all duration-300 cursor-default">
-            <Github size={14} />
+            <GitFork size={14} />
             GitHub
           </span>
         </div>
